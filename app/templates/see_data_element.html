@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Hi {{ current_user.username }}!</h1>
+
+    <br>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading" style="font-size:130%;"> <strong> {{ data_name }} </strong></div>
+
+  <!-- List group -->
+  <ul class="list-group">
+      {% for data_point in data_list  %}
+        <li class="list-group-item"><strong> {{ data_point.field_name }}: </strong> {{ data_point.data }}</li>
+      {% endfor %}
+
+      <!-- {% for data_point_nested in data_list_nested  %}
+
+          <li class="list-group-item"><strong> {{ data_point_nested.field_name }}: </strong>
+                {% for elem in data_point_nested.data %}
+                    <p> {{ elem }} </p>
+            {% endfor %}
+          </li>
+
+
+      {% endfor %}-->
+  </ul>
+</div>
+
+
+{% if form %}
+    <br>
+    {{ wtf.quick_form(form) }}
+{% endif %}
+
+{% endblock %}

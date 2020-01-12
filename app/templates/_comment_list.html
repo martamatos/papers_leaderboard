@@ -1,0 +1,19 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.paper', name=comment.paper.title) }}">
+                {{ comment.paper.title }}
+            </a>
+        </td>
+        <td>
+            <a href="{{ url_for('main.user', name=comment.user.name) }}">
+               {{ comment.paper.title }}
+            </a>
+            says:
+            <br>
+            {{ comment.text }}
+            <br>
+            Rating: {{ comment.rating }}
+        </td>
+    </tr>
+</table>

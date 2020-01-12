@@ -1,0 +1,18 @@
+<td>
+    {{ data_point.get_read_by_n_users() }}
+</td>
+<td>
+    <a href="{{ url_for('main.see_paper', paper_id=data_point.id )}}"> {{ data_point.title }} </a>
+</td>
+<td>
+    {{ data_point.first_author }}
+</td>
+<td>
+    {{ data_point.last_author }}
+</td>
+<td>
+    {{ data_point.doi }}
+</td>
+<td>
+    {{ data_point.rating }}
+</td>
